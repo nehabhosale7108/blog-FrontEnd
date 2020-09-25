@@ -1,0 +1,21 @@
+.a{
+    border: 1px solid darkblue;
+    border-radius: 8px;
+    height: 400px;
+    width: 50%;
+    background-color:#e6e6ff;
+}
+.a:hover{
+    box-shadow: 1px 1px 9px darkblue;
+    border: none;
+}
+.size{
+    width: 500px;
+}
+.up{
+    color: #000066;
+}
+.btncolor{
+    background-color: #000066;
+    color: white;
+}

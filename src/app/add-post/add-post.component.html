@@ -1,0 +1,32 @@
+<div class="container">
+    <div>
+        <p class="h4 mb-4 mt-4">Create New Post</p>
+    </div>
+    <hr>
+    <form [formGroup]="AddPostForm">
+        <div>
+            <input type="text" id="title" [formControlName]="'title'" placeholder="Title">
+            <div *ngIf="AddPostForm.get('title').touched">
+                <label *ngIf="AddPostForm.get('title').hasError('required')">field is required</label>
+            </div>
+        </div>
+    </form>
+
+    <h1>TinyMCE 5 Angular Demo</h1>
+ <editor
+ apiKey="2f5kyyrupweoycky3vh4g5erhcigr45vzzqjjx6qbkov1c5x"
+   [init]="{
+     height: 500,
+     menubar: false,
+     plugins: [
+       'advlist autolink lists link image charmap print preview anchor',
+       'searchreplace visualblocks code fullscreen',
+       'insertdatetime media table paste code help wordcount'
+     ],
+     toolbar:
+       'undo redo | formatselect | bold italic backcolor | \
+       alignleft aligncenter alignright alignjustify | \
+       bullist numlist outdent indent | removeformat | help'
+   }"
+ ></editor>
+</div>

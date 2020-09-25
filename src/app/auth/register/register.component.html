@@ -1,0 +1,48 @@
+<div class="container d-flex justify-content-center a mt-5">
+    
+    <form [formGroup]="registerForm">
+        <p class="h4 text-center mb-4 mt-4 title">Register Here</p>
+        
+        <div class="size">
+            <div class="mt-4">
+                <input type="text" id="namer" [formControlName]="'namer'" placeholder="Name" class="form-control">
+                <label *ngIf= "registerForm.get('namer').touched && registerForm.get('namer').hasError('required')" style="color :red;size: 16px;">Name is required*</label>
+            </div>
+            <div class="mt-4">
+                <input type="email" id="emailr" [formControlName]="'emailr'" placeholder="email" class="form-control">
+    
+                <div *ngIf= "registerForm.get('emailr').touched">
+                    <label *ngIf="registerForm.get('emailr').hasError('pattern')" style="color :red;size: 16px;">Please enter valid Email</label>
+                    <label *ngIf="registerForm.get('emailr').hasError('required')" style="color :red;size: 16px;">Email is required*</label>
+                </div>
+            </div>
+             <div class="mt-4">
+                    <input type="text" id="contact" [formControlName]="'contact'" placeholder="contact" class="form-control">
+        
+                    <div *ngIf= "registerForm.get('contact').touched">
+                        <label *ngIf="registerForm.get('contact').hasError('pattern')" style="color :red;size: 16px;">Please enter valid contact</label>
+                        <label *ngIf="registerForm.get('contact').hasError('required')" style="color :red;size: 16px;">contact is required*</label>
+                    </div>
+            </div>
+            <div class="mt-4">
+                <input type="password" id="passwordr" [formControlName]="'passwordr'" placeholder="password" class="form-control">
+                <label *ngIf= "registerForm.get('passwordr').touched && registerForm.get('passwordr').hasError('required')" style="color :red;size: 16px;">Password is required*</label>
+            </div>
+            <div class="mt-4">
+                <input type="password" id="cpasswordr" [formControlName]="'cpasswordr'" placeholder="confirm password" class="form-control">
+                <label *ngIf= "registerForm.get('cpasswordr').touched && registerForm.get('cpasswordr').hasError('required')" style="color :red;size: 16px;">Confirmation is required*</label>
+            </div>
+            
+            <div class="mt-4">
+                <input type="text" id="bio" [formControlName]="'bio'" placeholder="Bio" class="form-control">
+                <label *ngIf= "registerForm.get('bio').touched && registerForm.get('bio').hasError('required')" style="color :red;size: 16px;">Bio is required*</label>
+            </div>
+            <div class="mt-4">
+                <input type="linkedin" id="linkedin" [formControlName]="'linkedin'" placeholder="LinkedInURL(Optional)" class="form-control">
+            </div>
+        </div>
+        
+       <button class="btn btn-block btncolor mt-4" >Register</button>
+        
+     </form> 
+  </div>

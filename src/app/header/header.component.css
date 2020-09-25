@@ -1,0 +1,19 @@
+.header{
+    background-color:#000066;
+    height: 100px;
+    width: 100%;
+}
+
+.login{
+    margin-top: 25px;
+    margin-left: 100px;
+}
+
+.title{
+    color: white;
+    text-decoration :none;
+}
+.title:hover{
+    text-decoration: underline;
+    color: white;
+}

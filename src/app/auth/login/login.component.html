@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center a mt-5">
+    <form [formGroup]="loginForm">
+        <p class="h4 text-center mb-4 mt-4 up">Login</p>
+        
+        <div class="size">
+            <div class="mt-4">
+            <input type="email" id="email" [formControlName]="'email'" placeholder="email" class="form-control">
+
+            <div *ngIf= "loginForm.get('email').touched">
+                <label *ngIf="loginForm.get('email').hasError('pattern')" style="color :red;size: 16px;">Enter valid Email</label>
+                <label *ngIf="loginForm.get('email').hasError('required')" style="color :red;size: 16px;">Email is required*</label>
+        
+            </div>
+            </div>
+            <div class="mt-4">
+                <input type="password" id="password" [formControlName]="'password'" placeholder="password" class="form-control">
+                <label *ngIf= "loginForm.get('password').touched && loginForm.get('password').hasError('required')" style="color :red;size: 16px;">Name is required*</label>
+            </div>
+        </div>
+        
+    
+    
+       <button class="btn btn-block btncolor mt-4" [disabled]="!loginForm.valid">Login</button>
+        
+    </form>
+    </div>

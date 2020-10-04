@@ -1,15 +1,19 @@
 <div class="container d-flex justify-content-center a mt-5">
     
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <p class="h4 text-center mb-4 mt-4 title">Register Here</p>
         
         <div class="size">
             <div class="mt-4">
-                <input type="text" id="namer" [formControlName]="'namer'" placeholder="Name" class="form-control">
+                <input type="text" id="namer" [formControlName]="'namer'" placeholder="FirstName" class="form-control">
                 <label *ngIf= "registerForm.get('namer').touched && registerForm.get('namer').hasError('required')" style="color :red;size: 16px;">Name is required*</label>
             </div>
             <div class="mt-4">
-                <input type="email" id="emailr" [formControlName]="'emailr'" placeholder="email" class="form-control">
+                <input type="text" id="lastName" [formControlName]="'lastName'" placeholder="LastName" class="form-control">
+                <label *ngIf= "registerForm.get('lastName').touched && registerForm.get('lastName').hasError('required')" style="color :red;size: 16px;">Name is required*</label>
+            </div>
+            <div class="mt-4">
+                <input type="email" id="emailr" [formControlName]="'emailr'" placeholder="Email" class="form-control">
     
                 <div *ngIf= "registerForm.get('emailr').touched">
                     <label *ngIf="registerForm.get('emailr').hasError('pattern')" style="color :red;size: 16px;">Please enter valid Email</label>
@@ -25,13 +29,27 @@
                     </div>
             </div>
             <div class="mt-4">
-                <input type="password" id="passwordr" [formControlName]="'passwordr'" placeholder="password" class="form-control">
-                <label *ngIf= "registerForm.get('passwordr').touched && registerForm.get('passwordr').hasError('required')" style="color :red;size: 16px;">Password is required*</label>
+                <div class="mt-4">
+                    <input type="text" id="userName" [formControlName]="'userName'" placeholder="UserName" class="form-control">
+                    <label *ngIf= "registerForm.get('userName').touched && registerForm.get('userName').hasError('required')" style="color :red;size: 16px;">Name is required*</label>
+                </div>
+            </div>
+            <div class="mt-4">
+                <input type="email" id="passwordr" [formControlName]="'passwordr'" placeholder="password" class="form-control">
+    
+                <div *ngIf= "registerForm.get('passwordr').touched">
+                    <label *ngIf="registerForm.get('passwordr').hasError('pattern')" style="color :red;size: 16px;">password must in between
+                         8 to 15 characters which contain at least one lowercase letter, one uppercaseletter, one numeric digit, and one special character</label>
+                    <label *ngIf="registerForm.get('passwordr').hasError('required')" style="color :red;size: 16px;">password is required*</label>
+                </div>
             </div>
             <div class="mt-4">
                 <input type="password" id="cpasswordr" [formControlName]="'cpasswordr'" placeholder="confirm password" class="form-control">
                 <label *ngIf= "registerForm.get('cpasswordr').touched && registerForm.get('cpasswordr').hasError('required')" style="color :red;size: 16px;">Confirmation is required*</label>
+                <!-- <label *ngIf="cpasswordr.dirty && ((passwordr.errors && passwordr.errors.compare) || (cpasswordr.errors && cpasswordr.errors.compare)) && !cpasswordr.errors.required">Password Doesn't match</span>    -->
+
             </div>
+
             
             <div class="mt-4">
                 <input type="text" id="bio" [formControlName]="'bio'" placeholder="Bio" class="form-control">
